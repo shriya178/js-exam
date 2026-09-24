@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Manage products · Rye &amp; Rose</title>
+</head>
+
+<body>
+    <header class="nav"><a class="logo" href="index.html">Rye &amp; Rose <small>bakery</small></a>
+        <nav><a href="index.html" data-p="index">Home</a><a href="shop.html" data-p="shop">Shop</a><a href="manage.html"
+                data-p="manage">Manage products</a><a href="about.html" data-p="about">About</a></nav>
+    </header>
+    <section class="wrap manage">
+        <h1 class="page-title">Manage products</h1>
+        <form id="productForm" class="form" novalidate>
+            <h2 id="formTitle">Add a product</h2>
+            <label>Title<input id="title" type="text" placeholder="e.g. Almond croissant"></label>
+            <label>Price (₹)<input id="price" type="number" min="0" step="0.01" placeholder="e.g. 120"></label>
+            <label>Image URL<input id="image" type="text" placeholder="images/croissant.jpg or https://…"></label>
+            <label>Category<select id="formCategory">
+                    <option>Cake</option>
+                    <option>Pastry</option>
+                    <option>Dessert</option>
+                    <option>Bread</option>
+                    <option>Cookie</option>
+                    <option>Drink</option>
+                </select></label>
+            <p id="error" class="error" role="alert"></p>
+            <div class="row"><button class="btn" type="submit" id="submitBtn">Add product</button><button
+                    class="btn ghost" type="button" id="cancelBtn" hidden>Cancel edit</button></div>
+        </form>
+        <h2>Your products</h2>
+        <div class="toolbar"><input id="search" type="search" placeholder="Search by title…"><select
+                id="category"></select><select id="sort">
+                <option value="">Sort by price</option>
+                <option value="asc">Low to high</option>
+                <option value="desc">High to low</option>
+            </select></div>
+        <div class="grid" id="productList"></div>
+    </section>
+    <footer class="foot">
+        <p>Rye &amp; Rose Bakery · Baked fresh every morning · Surat</p>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
